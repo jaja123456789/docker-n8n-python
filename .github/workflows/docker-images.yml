@@ -33,18 +33,18 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: cp default-requirements.txt images/n8n/requirements.txt
-      - name: Build (default => alpine)
-        uses: docker/build-push-action@v2
-        with:
-          context: ./images/n8n
-          build-args: |
-            N8N_VERSION=${{steps.vars.outputs.tag}}
-          platforms: linux/amd64
-          push: true
-          tags: |
-            ghcr.io/${{ github.actor }}/n8n-python:${{ steps.vars.outputs.tag }}
-            ghcr.io/${{ github.actor }}/n8n-python:latest
+      # - run: cp default-requirements.txt images/n8n/requirements.txt
+      # - name: Build (default => alpine)
+      #   uses: docker/build-push-action@v2
+      #   with:
+      #     context: ./images/n8n
+      #     build-args: |
+      #       N8N_VERSION=${{steps.vars.outputs.tag}}
+      #     platforms: linux/amd64
+      #     push: true
+      #     tags: |
+      #       ghcr.io/${{ github.actor }}/n8n-python:${{ steps.vars.outputs.tag }}
+      #       ghcr.io/${{ github.actor }}/n8n-python:latest
 
       - run: cp default-requirements.txt images/n8n-debian/requirements.txt
       - name: Build (debian)
