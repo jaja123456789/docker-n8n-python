@@ -19,9 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.PAT }}
+      - uses: actions/checkout@v4
 
       ## if we prefer without an input
       #      - name: Fetch release version
