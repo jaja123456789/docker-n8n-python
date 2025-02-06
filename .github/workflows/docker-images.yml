@@ -43,8 +43,8 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ${{ github.actor }}/n8n-python:${{ steps.vars.outputs.tag }}
-            ${{ github.actor }}/n8n-python:latest
+            ghcr.io/${{ github.actor }}/n8n-python:${{ steps.vars.outputs.tag }}
+            ghcr.io/${{ github.actor }}/n8n-python:latest
 
       - run: cp default-requirements.txt images/n8n-debian/requirements.txt
       - name: Build (debian)
@@ -56,5 +56,5 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
           tags: |
-            ${{ github.actor }}/n8n-python:${{ steps.vars.outputs.tag }}-debian
-            ${{ github.actor }}/n8n-python:latest-debian
+            ghcr.io/${{ github.actor }}/n8n-python:${{ steps.vars.outputs.tag }}-debian
+            ghcr.io/${{ github.actor }}/n8n-python:latest-debian
