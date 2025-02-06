@@ -43,8 +43,8 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/n8n-python:${{ steps.vars.outputs.tag }}
-            ${{ secrets.DOCKER_USERNAME }}/n8n-python:latest
+            ${{ github.actor }}/n8n-python:${{ steps.vars.outputs.tag }}
+            ${{ github.actor }}/n8n-python:latest
 
       - run: cp default-requirements.txt images/n8n-debian/requirements.txt
       - name: Build (debian)
@@ -56,5 +56,5 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/n8n-python:${{ steps.vars.outputs.tag }}-debian
-            ${{ secrets.DOCKER_USERNAME }}/n8n-python:latest-debian
+            ${{ github.actor }}/n8n-python:${{ steps.vars.outputs.tag }}-debian
+            ${{ github.actor }}/n8n-python:latest-debian
